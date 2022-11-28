@@ -1,0 +1,59 @@
+import static org.junit.Assert.*;
+import org.junit.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import org.junit.Test;
+
+public class TestListExamples {
+  // Write your grading tests here!
+
+  @Test
+    public void correctOrderTest1(){
+      List<String> list1 = new ArrayList<String>();
+      List<String> list2 = new ArrayList<String>();
+      list1.add("brownies");
+      list1.add("cakes");
+      list1.add("cookies");
+      list2.add("broccoli");
+      list2.add("carrots");
+      list2.add("spinach");
+      List<String> list3 = ListExamples.merge(list1, list2);
+      String[] expected = {"broccoli", "brownies","cakes","carrots","cookies","spinach"};
+      assertArrayEquals(expected, list3.toArray());
+  }
+
+
+
+  @Test
+    public void test1(){
+      List<String> test_list1 = new ArrayList<String>();
+      test_list1.add("iMac");
+      test_list1.add("iPod");
+      test_list1.add("iPhone");
+      test_list1.add("iPad");
+      test_list1.add("iCloud");
+      test_list1.add("iMovie");
+      String[] expected = {"iMac", "iPod","iPhone","iPad","iCloud","iMovie"};
+      assertArrayEquals(expected, test_list1.toArray());
+    
+    }
+  
+    @Test
+    public void correctOrderTest(){
+      List<String> list1 = new ArrayList<String>();
+      List<String> list2 = new ArrayList<String>();
+      list1.add("iMac");
+      list1.add("iPod");
+      list1.add("iPhone");
+      list2.add("iPad");
+      list2.add("iCloud");
+      list2.add("iMovie");
+      List<String> list3 = ListExamples.merge(list1, list2);
+      String[] expected = {"iPad", "iMac","iCloud","iPod","iMovie","iPhone"};
+      assertArrayEquals(expected, list3.toArray());
+  }
+
+
+
+}
